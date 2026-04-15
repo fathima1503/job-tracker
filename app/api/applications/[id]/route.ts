@@ -14,7 +14,8 @@ function getUserId(req: NextRequest) {
   }
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const userId = getUserId(req)
   if (!userId) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 })
@@ -35,7 +36,8 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   return Response.json(result.rows[0])
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const userId = getUserId(req)
   if (!userId) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 })
