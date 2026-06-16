@@ -40,9 +40,11 @@ export async function POST(req: NextRequest) {
 
     return Response.json({ token, user }, { status: 201 })
 
-  } catch (error) {
+  } 
+  catch (error) {
+    console.error('Register error:', error)
     return Response.json(
-      { error: 'Something went wrong' },
+      { error: String(error) },
       { status: 500 }
     )
   }
