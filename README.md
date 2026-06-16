@@ -42,5 +42,4 @@ A full stack web application to track your job applications built with Next.js, 
 
 ## Deployment
 
-- Frontend deployed on Vercel
-- Database hosted on Railway
+- Frontend and backend deployed on Vercel
